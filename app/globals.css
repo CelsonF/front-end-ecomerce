@@ -10,6 +10,10 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --color-shl-dark: #013220;
+  --color-shl-vibrant: #22c55e;
+  --color-shl-lime: #a3e635;
+  --color-shl-soft: #ecfdf5;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -23,4 +27,56 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.background-slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  animation: slideBackground 18s ease-in-out infinite;
+  opacity: 0;
+  transform: scale(1.04);
+}
+
+.bg-slide-one {
+  background-image:
+    linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    url("https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1920&q=80");
+  animation-delay: 0s;
+}
+
+.bg-slide-two {
+  background-image:
+    linear-gradient(0deg, rgba(0, 0, 0, 0.24), rgba(0, 0, 0, 0.24)),
+    url("https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1920&q=80");
+  animation-delay: 6s;
+}
+
+.bg-slide-three {
+  background-image:
+    linear-gradient(0deg, rgba(0, 0, 0, 0.28), rgba(0, 0, 0, 0.28)),
+    url("https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&w=1920&q=80");
+  animation-delay: 12s;
+}
+
+@keyframes slideBackground {
+  0% {
+    opacity: 0;
+    transform: translateX(6%) scale(1.08);
+  }
+  8% {
+    opacity: 1;
+  }
+  28% {
+    opacity: 1;
+    transform: translateX(0%) scale(1.04);
+  }
+  35% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-4%) scale(1.02);
+  }
 }
