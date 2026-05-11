@@ -40,7 +40,7 @@ function Typography({ className, variant, as, ...props }: TypographyProps) {
   };
 
   const Comp = (as ?? defaultTag[variant ?? "p"]) as keyof React.JSX.IntrinsicElements;
-  return <Comp className={cn(typographyVariants({ variant }), className)} {...props} />;
+  return <Comp className={cn(typographyVariants({ variant }), className)} {...(props as Record<string, unknown>)} />;
 }
 
 export { Typography, typographyVariants };

@@ -96,7 +96,7 @@ export default function CategoriesSlider() {
             aria-label="Página anterior"
             onClick={goPrev}
             disabled={effectivePage === 0}
-            className="shrink-0 self-center bg-neutral-400/70 p-2.5 text-white transition hover:bg-neutral-400 disabled:pointer-events-none disabled:opacity-30"
+            className="shrink-0 self-center rounded-md bg-neutral-400/70 p-2.5 text-white transition hover:bg-neutral-400 disabled:pointer-events-none disabled:opacity-30"
           >
             <CaretLeftIcon size={18} weight="bold" />
           </button>
@@ -110,7 +110,7 @@ export default function CategoriesSlider() {
             <div className="grid gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-4 lg:gap-6">
               {visibleCards.map((category) => (
                 <article key={category.name} className="flex flex-col">
-                  <div className="relative aspect-[3/4] w-full overflow-hidden bg-neutral-100">
+                  <div className="relative aspect-[3/4] w-full overflow-hidden rounded-md bg-neutral-100">
                     <Image
                       src={category.imageUrl}
                       alt={`Mulher usando ${category.name.toLowerCase()}`}
@@ -132,7 +132,7 @@ export default function CategoriesSlider() {
             aria-label="Próxima página"
             onClick={goNext}
             disabled={effectivePage >= totalPages - 1}
-            className="shrink-0 self-center bg-neutral-400/70 p-2.5 text-white transition hover:bg-neutral-400 disabled:pointer-events-none disabled:opacity-30"
+            className="shrink-0 self-center rounded-md bg-neutral-400/70 p-2.5 text-white transition hover:bg-neutral-400 disabled:pointer-events-none disabled:opacity-30"
           >
             <CaretRightIcon size={18} weight="bold" />
           </button>

@@ -32,7 +32,7 @@ export default function TrustSignals() {
         {items.map(({ Icon, title, body }) => (
           <div
             key={title}
-            className="flex flex-col items-center border border-shl-dark/15 bg-shl-soft/40 p-6 text-center"
+            className="flex flex-col items-center rounded-md border border-shl-dark/15 bg-shl-soft/40 p-6 text-center"
           >
             <Icon className="mb-3 text-shl-dark" size={28} weight="duotone" aria-hidden />
             <h3 className="text-sm font-semibold text-shl-dark">{title}</h3>

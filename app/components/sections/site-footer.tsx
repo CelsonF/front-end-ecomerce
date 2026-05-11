@@ -45,8 +45,8 @@ export default function SiteFooter() {
           <div className="text-xs text-shl-soft/65">
             <p className="mb-2 font-medium text-shl-soft">Baixe nosso app</p>
             <div className="flex flex-wrap gap-2">
-              <span className="rounded border border-white/20 px-3 py-1.5">App Store</span>
-              <span className="rounded border border-white/20 px-3 py-1.5">Google Play</span>
+              <span className="rounded-md border border-white/20 px-3 py-1.5">App Store</span>
+              <span className="rounded-md border border-white/20 px-3 py-1.5">Google Play</span>
             </div>
           </div>
         </div>

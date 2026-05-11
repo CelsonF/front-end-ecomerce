@@ -103,7 +103,7 @@ export default function ProductSlider() {
             aria-label="Produtos anteriores"
             onClick={goPrev}
             disabled={effectivePage === 0}
-            className="shrink-0 bg-neutral-400/70 p-2.5 text-white transition hover:bg-neutral-400 disabled:pointer-events-none disabled:opacity-30"
+            className="shrink-0 rounded-md bg-neutral-400/70 p-2.5 text-white transition hover:bg-neutral-400 disabled:pointer-events-none disabled:opacity-30"
           >
             <CaretLeftIcon size={18} weight="bold" />
           </button>
@@ -113,7 +113,7 @@ export default function ProductSlider() {
               {visible.map((product) => (
                 <article
                   key={product.id}
-                  className="flex flex-col overflow-hidden rounded-sm border border-shl-dark/10 bg-white shadow-sm"
+                  className="flex flex-col overflow-hidden rounded-md border border-shl-dark/10 bg-white shadow-sm"
                 >
                   <div className="relative aspect-[3/4] bg-neutral-100">
                     <Image
@@ -132,7 +132,7 @@ export default function ProductSlider() {
                     <p className="text-base font-semibold text-shl-dark">{product.price}</p>
                     <button
                       type="button"
-                      className="mt-auto border border-shl-dark bg-shl-vibrant py-2 text-xs font-bold uppercase tracking-wider text-white transition hover:bg-shl-dark hover:text-shl-soft"
+                      className="mt-auto rounded-md border border-shl-dark bg-shl-vibrant py-2 text-xs font-bold uppercase tracking-wider text-white transition hover:bg-shl-dark hover:text-shl-soft"
                     >
                       Comprar
                     </button>
@@ -147,7 +147,7 @@ export default function ProductSlider() {
             aria-label="Próximos produtos"
             onClick={goNext}
             disabled={effectivePage >= totalPages - 1}
-            className="shrink-0 bg-neutral-400/70 p-2.5 text-white transition hover:bg-neutral-400 disabled:pointer-events-none disabled:opacity-30"
+            className="shrink-0 rounded-md bg-neutral-400/70 p-2.5 text-white transition hover:bg-neutral-400 disabled:pointer-events-none disabled:opacity-30"
           >
             <CaretRightIcon size={18} weight="bold" />
           </button>

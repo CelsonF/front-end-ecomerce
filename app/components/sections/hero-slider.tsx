@@ -51,14 +51,14 @@ export default function HeroSlider() {
             type="button"
             aria-label="Slide anterior"
             onClick={prevSlide}
-            className="absolute left-0 top-1/2 hidden -translate-y-1/2 bg-white/40 p-3 text-black transition hover:bg-white/70 md:block"
+            className="absolute left-0 top-1/2 hidden -translate-y-1/2 rounded-md bg-white/40 p-3 text-black transition hover:bg-white/70 md:block"
           >
             <CaretLeftIcon size={18} weight="bold" />
           </button>
 
           <div className="pb-6">
             <h1 className="font-serif text-5xl italic drop-shadow-md md:text-7xl">{currentSlide.title}</h1>
-            <button className="mt-4 border border-white/70 bg-black/25 px-7 py-1.5 text-sm tracking-widest transition hover:bg-white/15">
+            <button className="mt-4 rounded-md border border-white/70 bg-black/25 px-7 py-1.5 text-sm tracking-widest transition hover:bg-white/15">
               {currentSlide.cta}
             </button>
           </div>
@@ -67,7 +67,7 @@ export default function HeroSlider() {
             type="button"
             aria-label="Próximo slide"
             onClick={nextSlide}
-            className="absolute right-0 top-1/2 hidden -translate-y-1/2 bg-white/40 p-3 text-black transition hover:bg-white/70 md:block"
+            className="absolute right-0 top-1/2 hidden -translate-y-1/2 rounded-md bg-white/40 p-3 text-black transition hover:bg-white/70 md:block"
           >
             <CaretRightIcon size={18} weight="bold" />
           </button>

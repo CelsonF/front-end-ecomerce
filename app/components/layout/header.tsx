@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Navigation from "../Navigation";
+import { MobileMenuButton } from "./mobile-menu-button";
 
 export default function Header() {
   return (
@@ -10,7 +11,12 @@ export default function Header() {
         <div className="flex items-center gap-3">
           <Image src="/shl-fitness-logo.png" alt="logo" width={84} height={42} priority />
         </div>
-        <Navigation />
+        <div className="hidden md:flex flex-1 justify-center">
+          <Navigation />
+        </div>
+        <div className="flex items-center gap-2">
+          <MobileMenuButton />
+        </div>
       </div>
     </header>
   );

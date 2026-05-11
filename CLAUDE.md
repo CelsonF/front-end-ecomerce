@@ -1,419 +1,459 @@
-# CLAUDE.md
+# CLAUDE.md - E-commerce CMS Frontend
 
-# E-commerce CMS AI Engineering Rules
+## 🎯 Project Vision
 
-## Objective
+Premium, scalable e-commerce CMS built with Next.js 15, TypeScript, and modern tooling.
 
-This project is a modern premium e-commerce CMS platform built with:
+**Stack:**
+- Frontend: Next.js 15, React 19, TypeScript
+- Styling: TailwindCSS 4, CVA, shadcn/ui
+- State: Zustand (client), TanStack Query (server)
+- Forms: React Hook Form + Zod
+- Icons: Lucide React, Phosphor Icons
+- Animation: Framer Motion
+- Backend: NestJS, PostgreSQL, Prisma, Redis, Supabase
 
-- Next.js 15
-- TypeScript
-- TailwindCSS
-- shadcn/ui
-- NestJS
-- PostgreSQL
-- Prisma
-- Redis
-- Supabase
-
-The goal is to create:
-
-- scalable architecture
-- reusable UI system
-- modern UX
-- decoupled front-end
-- premium admin dashboard
-- headless e-commerce platform
+**Principles:**
+1. UX > everything else
+2. Reusable components > giant components
+3. Scalable architecture > quick hacks
+4. Premium feel: Stripe, Linear, Vercel, Shopify, Apple
 
 ---
 
-# AI Assistant Main Rules
+## 📁 Folder Structure
 
-## 1. Component First Architecture
+**Current (App Router - no src/):**
 
-Always create:
-
-- reusable components
-- layouts
-- sections
-- design system
-
-BEFORE:
-
-- business logic
-- integrations
-- API implementation
-
----
-
-## 2. Never Create Giant Components
-
-Prefer composition.
-
-### Correct
-
-```tsx
-<Card>
-  <CardHeader />
-  <CardContent />
-</Card>
 ```
-
-### Wrong
-
-```tsx
-<MassiveProductCardWithEverything />
-```
-
----
-
-## 3. Folder Organization Rules
-
-Always organize by domain.
-
-### Correct
-
-```txt
-components/
-  ecommerce/
-    product/
-    cart/
-
-  dashboard/
-    analytics/
-    orders/
-```
-
-### Wrong
-
-```txt
-components/
-  ProductCard.tsx
-  ProductCard2.tsx
-  ProductCardFinal.tsx
-```
-
----
-
-## 4. Design System Consistency
-
-All UI must follow:
-
-- same spacing
-- same radius
-- same shadow system
-- same motion rules
-- same typography
-
----
-
-## 5. UX Philosophy
-
-The UI must feel:
-
-- premium
-- minimal
-- modern
-- fast
-- clean
-
-Inspired by:
-
-- Stripe
-- Linear
-- Vercel
-- Shopify
-- Apple
-
----
-
-## 6. Modern UX Rules
-
-Always:
-
-- use whitespace
-- use skeleton loading
-- use smooth transitions
-- prefer drawers over modals
-- use responsive layouts
-- prioritize readability
-
-Never:
-
-- overuse gradients
-- overuse shadows
-- create visual pollution
-- create bloated interfaces
-
----
-
-## 7. Next.js Rules
-
-Always:
-
-- use App Router
-- prefer Server Components
-- use route groups
-- create loading.tsx
-- create error.tsx
-- create reusable layouts
-
----
-
-## 8. Component Construction Rules
-
-Every component must:
-
-- have single responsibility
-- be reusable
-- support variants
-- support accessibility
-- avoid hardcoded logic
-
----
-
-## 9. State Management Rules
-
-Use:
-
-- Zustand for UI/client state
-- TanStack Query for server state
-
-Never:
-
-- place everything in global state
-- mix UI state with API cache
-
----
-
-## 10. Styling Rules
-
-Use:
-
-- TailwindCSS
-- cva
-- clsx
-- tailwind-merge
-
-Avoid:
-
-- inline styles
-- duplicated classes
-- hardcoded colors
-
----
-
-## 11. API Architecture Rules
-
-Front-end must NEVER:
-
-- access database directly
-- contain business logic
-- contain security rules
-
-Always use:
-
-- services
-- repositories
-- DTOs
-- adapters
-
----
-
-## 12. Performance Rules
-
-Always optimize:
-
-- images
-- rendering
-- fonts
-- bundle size
-
-Prefer:
-
-- lazy loading
-- streaming
-- dynamic imports
-- partial rendering
-
----
-
-## 13. Security Rules
-
-Never expose:
-
-- secrets
-- admin rules
-- tokens
-- private keys
-
-Always:
-
-- validate payloads
-- validate permissions
-- sanitize requests
-
----
-
-## 14. Accessibility Rules
-
-Always:
-
-- semantic HTML
-- keyboard navigation
-- focus states
-- aria labels
-
----
-
-## 15. Project Philosophy
-
-This is NOT:
-
-- a simple CRUD
-
-This IS:
-
-- a scalable platform
-- a reusable ecosystem
-- a premium experience
-- a long-term product
-
----
-
-# Development Priorities
-
-## Phase 1
-
-- UX foundation
-- Design system
-- Base components
-
----
-
-## Phase 2
-
-- Storefront UI
-- Product pages
-- Cart experience
-
----
-
-## Phase 3
-
-- Admin dashboard
-- CMS experience
-- CRUD interfaces
-
----
-
-## Phase 4
-
-- Authentication
-- Protected routes
-- Sessions
-
----
-
-## Phase 5
-
-- API integration
-- Prisma
-- PostgreSQL
-- Redis
-
----
-
-# Base Libraries
-
-## UI
-
-- shadcn/ui
-- Radix UI
-- Framer Motion
-- Lucide Icons
-
-## State
-
-- Zustand
-- TanStack Query
-
-## Forms
-
-- React Hook Form
-- Zod
-
-## Utilities
-
-- clsx
-- tailwind-merge
-- class-variance-authority
-
----
-
-# Folder Structure
-
-```txt
-src/
-
 app/
-components/
-modules/
-services/
-stores/
-hooks/
-providers/
-utils/
-types/
-styles/
-config/
+├── (routes)/           # Route groups for organization
+│   ├── (storefront)/   # Public store pages
+│   ├── (dashboard)/    # Admin dashboard (protected)
+│   └── (auth)/         # Auth flows
+├── components/
+│   ├── ui/             # Design system (button, card, input, etc)
+│   ├── layout/         # Header, footer, sidebar
+│   ├── sections/       # Page sections (hero, slider, etc)
+│   └── ecommerce/      # Domain-specific
+│       ├── product/
+│       ├── cart/
+│       ├── checkout/
+│       └── catalog/
+├── hooks/              # Custom hooks
+├── stores/             # Zustand stores
+├── services/           # API clients, adapters
+├── utils/              # Helpers, formatters
+├── types/              # Global types, interfaces
+├── config/             # Constants, configuration
+├── styles/             # Global styles, themes
+├── providers.tsx       # Client providers
+├── layout.tsx          # Root layout
+└── page.tsx            # Home page
+
+```
+
+**Key Rules:**
+- Use kebab-case for files: `product-card.tsx`, NOT `ProductCard.tsx`
+- Organize by domain/feature, NOT by type
+- Keep components folder flat when possible
+- Use route groups `(name)` to organize without affecting URLs
+
+---
+
+## 🧩 Component Architecture
+
+### Single Responsibility Principle
+
+```tsx
+// ✅ CORRECT: Decomposed, reusable
+<ProductCard>
+  <ProductImage src={image} />
+  <ProductHeader title={title} />
+  <ProductPrice price={price} />
+  <ProductActions onAdd={onAdd} />
+</ProductCard>
+
+// ❌ WRONG: Giant component with everything
+<MassiveProductCardWithImageHeaderPriceAndActions />
+```
+
+### Component Checklist
+
+Every component must have:
+- [ ] Single responsibility
+- [ ] Reusable props interface
+- [ ] Variants (via CVA)
+- [ ] Accessibility (aria labels, semantic HTML)
+- [ ] TypeScript types
+- [ ] No hardcoded logic/data
+
+### Variants Pattern (CVA)
+
+```tsx
+import { cva } from "class-variance-authority";
+import { cn } from "@/lib/utils";
+
+const buttonVariants = cva(
+  "inline-flex items-center justify-center transition-colors",
+  {
+    variants: {
+      variant: {
+        default: "bg-zinc-900 text-white hover:bg-zinc-800",
+        outline: "border border-zinc-300 hover:bg-zinc-100",
+      },
+      size: {
+        sm: "h-8 px-3 text-sm",
+        md: "h-10 px-4",
+        lg: "h-12 px-6",
+      },
+    },
+    defaultVariants: { variant: "default", size: "md" },
+  }
+);
+
+export function Button({ variant, size, className, ...props }) {
+  return <button className={cn(buttonVariants({ variant, size }), className)} {...props} />;
+}
 ```
 
 ---
 
-# Monorepo Structure
+## 🎨 Design System Rules
 
-```txt
-apps/
-  store/
-  admin/
-  api/
+### Consistency Requirements
 
-packages/
-  ui/
-  types/
-  utils/
+All UI must align on:
+- **Spacing:** Use Tailwind scale (4px base: p-1, p-2, p-3, p-4, p-6, p-8)
+- **Radius:** Consistent border-radius (sm, md, lg, full)
+- **Shadows:** Minimal shadows, not overused
+- **Motion:** Use Framer Motion for meaningful animations, NOT gratuitous
+- **Typography:** 2-3 font sizes max per component
+- **Colors:** Use tokens (shl-vibrant, shl-lime, shl-dark, etc)
+
+### Color Tokens
+
+Define in `tailwind.config.ts`:
+```js
+colors: {
+  "shl-dark": "#000000",
+  "shl-vibrant": "#00FF00",
+  "shl-lime": "#ADFF2F",
+}
+```
+
+### Never Do This
+
+- ❌ Overuse gradients (max 1 gradient per page)
+- ❌ Overuse shadows (use elevation system)
+- ❌ Inline styles (use Tailwind classes)
+- ❌ Magic numbers (use config constants)
+- ❌ Visual pollution (use whitespace)
+
+---
+
+## 🔧 State Management
+
+### Zustand (Client State)
+
+```tsx
+import { create } from "zustand";
+
+interface NavigationStore {
+  isOpen: boolean;
+  toggle: () => void;
+  close: () => void;
+}
+
+export const useNavigationStore = create<NavigationStore>((set) => ({
+  isOpen: false,
+  toggle: () => set((state) => ({ isOpen: !state.isOpen })),
+  close: () => set({ isOpen: false }),
+}));
+```
+
+**Use for:**
+- UI state (modals, drawers, tabs)
+- User preferences
+- Theme, language
+- Temporary filters
+
+**Never use for:**
+- API data (use TanStack Query)
+- Business logic
+- Large nested state
+
+### TanStack Query (Server State)
+
+```tsx
+import { useQuery } from "@tanstack/react-query";
+
+export function useProducts(category?: string) {
+  return useQuery({
+    queryKey: ["products", category],
+    queryFn: async () => {
+      const res = await fetch(`/api/products?category=${category}`);
+      return res.json();
+    },
+  });
+}
+```
+
+**Use for:**
+- API data fetching
+- Caching
+- Background refetches
+- Server state sync
+
+---
+
+## 📋 Data & Mocking
+
+### Data Patterns
+
+```tsx
+// ✅ Extract to data layer
+const slides = [
+  { id: 1, title: "Slide 1", image: "..." },
+  { id: 2, title: "Slide 2", image: "..." },
+];
+
+export function HeroSlider() {
+  return <Slider items={slides} />;
+}
+
+// ❌ Don't hardcode in component
+export function HeroSlider() {
+  return (
+    <div>
+      <img src="..." />
+      <h1>Slide 1</h1>
+    </div>
+  );
+}
+```
+
+### Mock Data Structure
+
+```
+app/
+├── mocks/
+│   ├── products.ts
+│   ├── categories.ts
+│   └── users.ts
 ```
 
 ---
 
-# Component Naming Rules
+## ⚡ Performance Rules
 
-## Correct
+### Always Optimize
 
-```txt
-product-card.tsx
-cart-drawer.tsx
-sidebar-menu.tsx
+- **Images:** Use Next.js `<Image>`, not `<img>`
+- **Fonts:** Google fonts configured in layout.tsx
+- **Rendering:** Use Server Components when possible
+- **Bundle:** Use dynamic imports for heavy components
+
+```tsx
+import dynamic from "next/dynamic";
+
+const HeavyChart = dynamic(() => import("./chart"), {
+  loading: () => <Skeleton />,
+  ssr: false,
+});
 ```
 
-## Wrong
+### Loading States
 
-```txt
-ProductCardNew.tsx
-FinalSidebar.tsx
+Every async operation needs skeleton or loading state:
+
+```tsx
+export function ProductCard({ isLoading }) {
+  if (isLoading) return <ProductCardSkeleton />;
+  return <ProductCardContent />;
+}
 ```
 
 ---
 
-# Final Rule
+## 🔐 Security Rules
 
-Always prioritize:
+### Never Expose
 
-1. UX
-2. Reusability
-3. Scalability
-4. Maintainability
-5. Performance
+- ❌ API keys, secrets in client code
+- ❌ Direct database access
+- ❌ Admin logic on frontend
+- ❌ User tokens in localStorage (use httpOnly cookies)
 
-Never sacrifice architecture quality for short-term speed.
+### Always Validate
+
+- Input validation (Zod)
+- Permission checks (server-side)
+- CSRF tokens for mutations
+- Sanitize user input
+
+---
+
+## ♿ Accessibility Rules
+
+### Requirements
+
+- [ ] Semantic HTML (`<button>`, `<nav>`, `<main>`)
+- [ ] ARIA labels: `aria-label`, `aria-describedby`
+- [ ] Keyboard navigation: Tab, Enter, Escape
+- [ ] Focus states: visible focus rings
+- [ ] Color contrast: WCAG AA minimum
+
+```tsx
+// ✅ Accessible
+<button 
+  aria-label="Close menu"
+  onClick={handleClose}
+  className="focus:ring-2 focus:ring-offset-2"
+>
+  ✕
+</button>
+
+// ❌ Not accessible
+<div onClick={handleClose} className="cursor-pointer">
+  ✕
+</div>
+```
+
+---
+
+## 📱 Responsive Design
+
+### Mobile-First Approach
+
+```tsx
+// ✅ Start with mobile, add desktop with md:, lg:, xl:
+<div className="px-4 py-6 md:px-6 md:py-8 lg:px-8">
+  <h1 className="text-2xl md:text-3xl lg:text-4xl" />
+</div>
+
+// ❌ Desktop-first
+<div className="px-8 py-8 sm:px-6 sm:py-6 xs:px-4 xs:py-4">
+```
+
+### Breakpoints (Tailwind defaults)
+
+- `sm`: 640px
+- `md`: 768px
+- `lg`: 1024px
+- `xl`: 1280px
+
+---
+
+## 🚀 Development Phases
+
+### Phase 1: UX Foundation ✅ (In Progress)
+- [ ] Design system components (button, card, input, etc)
+- [ ] Layout components (header, footer, sidebar)
+- [ ] Page sections (hero, slider, featured)
+- [ ] Folder structure reorganization
+- [ ] Root providers (QueryClient, Zustand)
+
+### Phase 2: Storefront UI
+- [ ] Product pages
+- [ ] Product catalog
+- [ ] Cart drawer
+- [ ] Checkout flow
+- [ ] Search & filters
+
+### Phase 3: Admin Dashboard
+- [ ] Dashboard layout
+- [ ] Product CRUD
+- [ ] Order management
+- [ ] Analytics
+- [ ] CMS experience
+
+### Phase 4: Authentication
+- [ ] Auth flows (login, register, forgot password)
+- [ ] Protected routes
+- [ ] Session management
+- [ ] User profiles
+
+### Phase 5: API Integration
+- [ ] Backend integration
+- [ ] Database models
+- [ ] Real data instead of mocks
+- [ ] Payment processing
+
+---
+
+## 📝 Coding Guidelines
+
+### Import Organization
+
+```tsx
+// 1. React & Next.js
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+
+// 2. Third-party
+import { useQuery } from "@tanstack/react-query";
+import { Heart } from "lucide-react";
+
+// 3. Local components & utils
+import { Button } from "@/components/ui/button";
+import { formatPrice } from "@/utils/formatters";
+import { useProductStore } from "@/stores/product-store";
+```
+
+### File Exports
+
+```tsx
+// ✅ Named exports for components
+export function ProductCard({ ... }) { }
+export function ProductImage({ ... }) { }
+
+// ✅ Default export only for pages/layouts
+export default function Page() { }
+
+// ❌ Mix of default and named
+export default function ProductCard() { }
+export function ProductImage() { }
+```
+
+### Comments
+
+Only add comments for WHY, not WHAT:
+
+```tsx
+// ✅ Why comments
+// Delay query until user focus to avoid unnecessary API calls during page load
+const [enabled, setEnabled] = useState(false);
+
+// ❌ What comments
+// Set enabled to true
+setEnabled(true);
+```
+
+---
+
+## ✅ Final Checklist Before Commit
+
+- [ ] Follows folder structure rules
+- [ ] Component is reusable (no hardcoded data)
+- [ ] Responsive on mobile, tablet, desktop
+- [ ] Accessibility check (keyboard nav, aria labels)
+- [ ] TypeScript types complete (no `any`)
+- [ ] No console.log or debugger statements
+- [ ] Styled with Tailwind + CVA (no inline styles)
+- [ ] Performance optimized (images, dynamic imports)
+- [ ] Security rules followed (no secrets exposed)
+
+---
+
+## 🎯 Final Priority Order
+
+Always prioritize in this order:
+
+1. **UX** - Does it feel premium? Is it usable?
+2. **Reusability** - Can this be used elsewhere?
+3. **Scalability** - Will this break with 10K items?
+4. **Maintainability** - Can others understand this?
+5. **Performance** - Is it fast and efficient?
+
+**Never sacrifice architecture quality for short-term speed.**

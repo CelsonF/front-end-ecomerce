@@ -4,14 +4,14 @@ import { CaretLeftIcon, CaretRightIcon } from "@phosphor-icons/react";
 import { useMemo, useState } from "react";
 
 type ReviewItem = {
-  id: string;
+  id : number;
   name: string;
   text: string;
 };
 
 function ReviewCard({ text, name }: ReviewItem) {
   return (
-    <article className="flex flex-col border border-shl-dark/10 bg-white p-6 shadow-sm">
+    <article className="flex flex-col rounded-md border border-shl-dark/10 bg-white p-6 shadow-sm">
       <p className="mb-3 text-sm text-shl-vibrant" aria-hidden="true">
         ★★★★★
       </p>
@@ -23,22 +23,22 @@ function ReviewCard({ text, name }: ReviewItem) {
 
 const reviews: ReviewItem[] = [
   {
-    id: "1",
+    id: 1,
     name: "Marina Silva",
     text: "Qualidade incrível e entrega rápida. Os conjuntos combinam super bem no dia a dia e no treino.",
   },
-  {
-    id: "2",
+  { 
+    id: 2,
     name: "Paula Oliveira",
     text: "Já comprei leggings e tops — tecido confortável e cores fiéis às fotos. Recomendo demais!",
   },
   {
-    id: "3",
+    id: 3,
     name: "Ana Costa",
     text: "Atendimento atencioso e troca facilitada. A SHL virou minha marca favorita de activewear.",
   },
   {
-    id: "4",
+    id: 4,
     name: "Juliana Rocha",
     text: "Caimento ótimo, secagem rápida e acabamento premium. Voltarei a comprar sem dúvida.",
   },
@@ -64,7 +64,7 @@ export default function ReviewsSlider() {
             type="button"
             aria-label="Avaliações anteriores"
             onClick={prev}
-            className="shrink-0 self-center bg-neutral-400/70 p-2.5 text-white transition hover:bg-neutral-400"
+            className="shrink-0 self-center rounded-md bg-neutral-400/70 p-2.5 text-white transition hover:bg-neutral-400"
           >
             <CaretLeftIcon size={18} weight="bold" />
           </button>
@@ -72,12 +72,13 @@ export default function ReviewsSlider() {
           <div className="min-w-0 flex-1">
             <div className="hidden gap-6 md:grid md:grid-cols-3">
               {visibleDesktop.map((r) => (
-                <ReviewCard key={`${r.id}-${rotation}`} text={r.text} name={r.name} />
+                <ReviewCard key={`${r.id}-${rotation}`} id={r.id} text={r.text} name={r.name} />
               ))}
             </div>
             <div className="md:hidden">
               <ReviewCard
                 key={reviews[activeMobile].id}
+                id={reviews[activeMobile].id}
                 text={reviews[activeMobile].text}
                 name={reviews[activeMobile].name}
               />
@@ -88,7 +89,7 @@ export default function ReviewsSlider() {
             type="button"
             aria-label="Próximas avaliações"
             onClick={next}
-            className="shrink-0 self-center bg-neutral-400/70 p-2.5 text-white transition hover:bg-neutral-400"
+            className="shrink-0 self-center rounded-md bg-neutral-400/70 p-2.5 text-white transition hover:bg-neutral-400"
           >
             <CaretRightIcon size={18} weight="bold" />
           </button>

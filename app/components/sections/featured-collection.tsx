@@ -17,7 +17,7 @@ export default function FeaturedCollection() {
           <div className="flex justify-center lg:min-w-[160px]">
             <button
               type="button"
-              className="border border-shl-dark bg-shl-soft px-10 py-2.5 text-xs font-semibold uppercase tracking-[0.25em] text-shl-dark transition hover:bg-shl-vibrant hover:text-white"
+              className="rounded-md border border-shl-dark bg-shl-soft px-10 py-2.5 text-xs font-semibold uppercase tracking-[0.25em] text-shl-dark transition hover:bg-shl-vibrant hover:text-white"
             >
               Shop
             </button>
